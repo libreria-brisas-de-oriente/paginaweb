@@ -448,24 +448,17 @@ header {
 
 .brands-layout-container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
-    gap: 1.5rem;
-    align-items: stretch; /* Mantiene la misma altura en las tres columnas */
+    grid-template-columns: 280px 1.4fr 280px; /* Ancho fijo y controlado para los lados, imponente para el centro */
+    gap: 2rem;
+    align-items: center;
 }
 
-.brands-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribuye las 3 tarjetas de forma equitativa y simétrica */
-    height: 100%;                   /* Se estira para igualar la altura de la caja central */
-    gap: 0.8rem;
-}
-
+/* Las tarjetas de las marcas vuelven a su tamaño rectangular perfecto */
 .brand-card-ref {
     background-color: var(--white);
     border-radius: 8px;
-    padding: 0.5rem;
-    height: 31%;                    /* Divide exactamente el espacio en 3 partes iguales */
+    padding: 0.6rem;
+    height: 65px; /* Altura fija ideal para mantener la proporción de los logos */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -478,7 +471,6 @@ header {
     max-height: 85%;
     object-fit: contain;
 }
-
 .brand-card-ref:hover {
     transform: scale(1.03);
 }
