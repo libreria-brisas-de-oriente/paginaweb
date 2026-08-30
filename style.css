@@ -202,7 +202,9 @@ header {
     margin: 2rem auto;
 }
 
-/* Estructura del banner principal con texto izquierda y logo derecha */
+/* ==========================================
+   SECCIÓN HERO / BANNER PRINCIPAL (SEGÚN ESQUEMA)
+   ========================================== */
 .hero-section {
     background: linear-gradient(rgba(8, 41, 70, 0.82), rgba(15, 76, 129, 0.82)), 
                 url('https://www.revistaestilo.net/binrepository/1501x1000/0c0/0d0/none/179468266/UCMC/655cfdc3c498f145310377_9022394_20241111142522.jpg');
@@ -244,14 +246,15 @@ header {
 
 /* Imagen lateral en el Banner */
 .hero-image-container {
-   
+    background: rgba(255, 255, 255, 0.95);
     padding: 1.5rem;
+    border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 200px;
     border: 3px solid var(--accent-orange);
 }
 
@@ -295,6 +298,7 @@ header {
     opacity: 0.9;
     margin: 0;
 }
+
 /* Títulos de Sección */
 .section-header {
     font-size: 2rem;
