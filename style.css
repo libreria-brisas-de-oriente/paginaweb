@@ -498,7 +498,7 @@ header {
 
 .brands-center-box img {
     width: 130px;
-    max-width: 100%;
+    max-width: 120%;
     max-height: 110px;
     object-fit: contain;
     flex-grow: 1;
