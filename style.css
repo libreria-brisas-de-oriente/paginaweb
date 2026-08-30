@@ -111,16 +111,6 @@ header {
 /* Contenedor derecho: búsqueda arriba, menú y carrito abajo, alineado a la derecha */
 .header-right {
     display: flex;
-    flex-direction: column; /* El padre es una columna */
-    align-items: flex-end;  /* Alinea todo el bloque a la derecha */
-    gap: 8px;               /* Espacio pequeño entre la búsqueda y el menú */
-    width: auto;            /* Se ajusta al contenido */
-    max-width: 700px;       /* Limita el ancho máximo para que no se expanda de más */
-}
-
-/* Barra de búsqueda (Arriba) */
-.header-center {
-    display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
@@ -152,48 +142,38 @@ header {
     cursor: pointer;
     font-weight: bold;
 }
-/* Menú de navegación (Abajo) */
+
 .nav-menu {
     list-style: none;
-    display: flex;          /* Pone los enlaces en fila horizontal */
-    gap: 1.5rem;            /* Espacio entre enlaces (Inicio, Escolar, etc.) */
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    justify-content: flex-end; /* Alinea los enlaces a la derecha dentro de su espacio */
-    width: 100%;             /* Ocupa el ancho disponible del contenedor header-right */
+    display: flex;
+    gap: 2rem;
 }
 
-/* Estilo de los enlaces */
 .nav-menu a {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: color 0.2s;
-    white-space: nowrap; /* Evita que los textos largos se partan */
 }
 
 .nav-menu a:hover {
     color: var(--primary-blue);
 }
 
-/* Botón del Carrito (Ahora alineado junto al menú) */
 .cart-btn {
     background-color: var(--primary-blue);
     color: var(--white);
-    padding: 0.4rem 0.9rem;
+    padding: 0.5rem 1rem;
     border-radius: 6px;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: background 0.2s;
-    margin-left: 1rem; /* Espacio para separarlo del último enlace */
-    flex-shrink: 0; /* Evita que el botón se encoja */
 }
 
 .cart-btn:hover {
@@ -203,9 +183,9 @@ header {
 .cart-count {
     background-color: var(--accent-orange);
     color: var(--white);
-    padding: 0.1rem 0.4rem;
+    padding: 0.1rem 0.5rem;
     border-radius: 50%;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
 /* Secciones Generales */
 .main-wrapper {
