@@ -473,7 +473,7 @@ header {
 }
 
 .brand-card-ref img {
-    max-width: 85%;
+    max-width: 130%;
     max-height: 85%;
     object-fit: contain;
 }
