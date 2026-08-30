@@ -32,6 +32,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Garet', sans-serif !important;
+}
+:root {
+    --primary-blue: #0f4c81;
+    --dark-blue: #082946;
+    --accent-orange: #e27d60;
+    --accent-yellow: #f4d06f;
+    --bg-light: #f8fafc;
+    --text-dark: #2d3748;
+    --white: #ffffff;
+    --border-color: #cbd5e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -72,20 +89,41 @@ header {
     margin: 0 auto;
     padding: 1rem 0;
     display: flex;
-    justify-content: space-between; /* Separa logo de la derecha */
+    justify-content: space-between;
     align-items: center;
 }
 
-/* Área derecha del header (Contenedor de búsqueda y botones) */
-.header-right {
+.logo-area {
     display: flex;
-    flex-direction: column; /* Mantiene la estructura padre en columna */
-    align-items: flex-end;  /* Alinea todo el bloque a la derecha */
-    gap: 15px;              /* Espacio entre la barra de arriba y los botones de abajo */
-    width: auto;
+    align-items: center;
+    gap: 15px;
 }
 
-/* Barra de búsqueda (Arriba) */
+.logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text h1 {
+    font-size: 1.4rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.logo-text span {
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+/* Barra de Búsqueda y Enlaces del Header */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
 .search-bar-container {
     display: flex;
     align-items: center;
@@ -94,41 +132,43 @@ header {
     overflow: hidden;
     background: var(--white);
     width: 350px;
-    /* margin-bottom: 5px; */ /* Pequeño ajuste si es necesario */
 }
 
-/* Contenedor de los botones de navegación (Abajo) */
+.search-bar-container input {
+    border: none;
+    padding: 0.5rem 1rem;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.search-bar-container button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 .nav-menu {
     list-style: none;
-    display: flex; /* Esto los pone en fila horizontal */
-    gap: 2rem;     /* Espacio entre cada botón (Inicio, Escolar, etc.) */
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-/* Alinear el botón de carrito junto con los enlaces de texto */
-.header-right-bottom {
     display: flex;
-    align-items: center;
-    gap: 2rem; /* Espacio entre el último enlace y el botón de carrito */
+    gap: 2rem;
 }
 
-/* Asegurar que los enlaces se vean bien en su nueva posición */
 .nav-menu a {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 600;
     font-size: 0.95rem;
     transition: color 0.2s;
-    white-space: nowrap; /* Evita que los textos largos se partan */
 }
 
 .nav-menu a:hover {
     color: var(--primary-blue);
 }
 
-/* Estilo del botón de carrito */
 .cart-btn {
     background-color: var(--primary-blue);
     color: var(--white);
@@ -143,6 +183,7 @@ header {
     font-size: 0.95rem;
     transition: background 0.2s;
 }
+
 .cart-btn:hover {
     background-color: var(--dark-blue);
 }
@@ -160,6 +201,7 @@ header {
     width: 1160px;
     margin: 2rem auto;
 }
+
 /* ==========================================
    SECCIÓN HERO / BANNER PRINCIPAL (CORREGIDO)
    ========================================== */
