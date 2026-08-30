@@ -454,17 +454,18 @@ header {
 }
 
 .brands-column {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye las 3 tarjetas de forma equitativa y simétrica */
+    height: 100%;                   /* Se estira para igualar la altura de la caja central */
     gap: 0.8rem;
-    align-content: center;
 }
 
 .brand-card-ref {
     background-color: var(--white);
     border-radius: 8px;
     padding: 0.5rem;
-    height: 60px; /* Altura controlada para que no se vean gigantes */
+    height: 31%;                    /* Divide exactamente el espacio en 3 partes iguales */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -473,7 +474,7 @@ header {
 }
 
 .brand-card-ref img {
-    max-width: 130%;
+    max-width: 85%;
     max-height: 85%;
     object-fit: contain;
 }
