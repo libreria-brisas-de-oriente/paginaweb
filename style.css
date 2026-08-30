@@ -32,23 +32,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Garet', sans-serif !important;
-}
-:root {
-    --primary-blue: #0f4c81;
-    --dark-blue: #082946;
-    --accent-orange: #e27d60;
-    --accent-yellow: #f4d06f;
-    --bg-light: #f8fafc;
-    --text-dark: #2d3748;
-    --white: #ffffff;
-    --border-color: #cbd5e0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
