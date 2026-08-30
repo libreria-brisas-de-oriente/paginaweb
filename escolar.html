@@ -15,31 +15,41 @@
         </div>
     </div>
 
-    <header>
-        <div class="nav-container">
+<header>
+        <div class="nav-container" style="display: flex; justify-content: space-between; align-items: center; width: 1160px; margin: 0 auto; padding: 0.8rem 0;">
+            <!-- 1. Logo a la izquierda -->
             <div class="logo-area">
-                <img src="img/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Brisas+de+Oriente'">
+                <img src="img/logo.png" alt="Brisas de Oriente Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Brisas+de+Oriente'">
                 <div class="logo-text">
                     <h1>Brisas de Oriente</h1>
-                    <span>Catálogo Escolar</span>
+                    <span>Papelería Escolar y de Oficina</span>
                 </div>
             </div>
 
-            <div class="header-right">
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="escolar.html" style="color: var(--primary-blue);">Escolar</a></li>
-                    <li><a href="libros.html">Libros</a></li>
-                    <li><a href="oficina.html">Oficina</a></li>
-                </ul>
-            </div>
+            <!-- 2. Contenedor Derecho: Búsqueda arriba, Menú y Carrito abajo -->
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+                <!-- Barra de búsqueda (Arriba) -->
+                <div class="search-bar-container" style="display: flex; align-items: center; border: 2px solid var(--primary-blue); border-radius: 6px; overflow: hidden; background: var(--white); width: 350px;">
+                    <input type="text" id="homeSearchInput" placeholder="Buscar productos, marcas, cuadernos..." onkeypress="handleSearch(event)" style="border: none; padding: 0.4rem 0.8rem; outline: none; width: 100%; font-size: 0.9rem;">
+                    <button onclick="executeSearch()" style="background-color: var(--primary-blue); color: var(--white); border: none; padding: 0.4rem 0.8rem; cursor: pointer; font-weight: bold;">🔍</button>
+                </div>
 
-            <button class="cart-btn" onclick="toggleCart()">
-                🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
-            </button>
+                <!-- Botones y Menú (Abajo, en fila horizontal) -->
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <ul class="nav-menu" style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; align-items: center;">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="escolar.html">Escolar</a></li>
+                        <li><a href="libros.html">Libros y Textos</a></li>
+                        <li><a href="oficina.html">Oficina</a></li>
+                        <li><a href="tienda.html" style="color: var(--primary-blue);">Tienda Online</a></li>
+                    </ul>
+                    <button class="cart-btn" onclick="toggleCart()" style="background-color: var(--primary-blue); color: var(--white); padding: 0.4rem 0.9rem; border-radius: 6px; display: flex; align-items: center; gap: 6px; border: none; cursor: pointer; font-weight: 600; font-size: 0.9rem;">
+                        🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
-
     <div class="main-wrapper">
         <h2 class="section-header">Artículos del Área Escolar</h2>
         <p style="color: #718096; margin-bottom: 2rem;">Selección especial con los mejores útiles escolares para acompañar tus clases y metas académicas.</p>
