@@ -246,24 +246,22 @@ header {
 
 /* Imagen lateral en el Banner */
 .hero-image-container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 280px;
-    height: 200px;
-    border: 3px solid var(--accent-orange);
+    width: 320px; /* Más ancho para que luzca imponente */
+    height: auto;
 }
 
 .hero-image-container img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    max-height: 220px;
     object-fit: contain;
 }
-
 /* Los 3 bloques inferiores CENTRADOS (Tienda, Horarios, Delivery) */
 .hero-boxes-centered {
     display: grid;
