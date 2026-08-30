@@ -237,11 +237,25 @@ header {
 }
 
 /* Logo Grande, Transparente y a la Derecha */
+/* Forzar contenedor totalmente transparente y sin bordes */
+.hero-image-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 380px;
+    flex-shrink: 0;
+}
+
 .hero-image-container img {
     width: 100%;
     max-height: 220px;
     object-fit: contain;
-    background: none !important;
+    background: transparent !important;
 }
 /* Los 3 Bloques Inferiores (Tienda, Horarios, Delivery) */
 .hero-boxes-centered {
