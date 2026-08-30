@@ -486,7 +486,7 @@ header {
     background-color: #ffffff;
     color: var(--primary-blue);
     border-radius: 12px;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1.2rem; /* Espaciado interno equilibrado */
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     display: flex;
@@ -496,6 +496,7 @@ header {
     height: 100%;
 }
 
+/* Logo grande y dominante en el centro */
 .brands-center-box img {
     width: 85% !important;     /* Ocupa el 85% del ancho de la caja */
     max-height: 160px !important; /* Altura generosa para que luzca imponente */
@@ -508,9 +509,8 @@ header {
     font-size: 1.15rem;
     white-space: nowrap;
     font-weight: 800;
-    margin-top: 0.8rem;
+    margin-top: 1rem;
 }
-
 /* Modal / Panel del Carrito */
 .cart-modal {
     position: fixed;
