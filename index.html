@@ -17,8 +17,9 @@
     </div>
 
     <!-- Header Principal -->
-    <header>
+   <header>
         <div class="nav-container">
+            <!-- 1. Área del Logo (Izquierda) -->
             <div class="logo-area">
                 <img src="img/logo.png" alt="Brisas de Oriente Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Brisas+de+Oriente'">
                 <div class="logo-text">
@@ -27,11 +28,16 @@
                 </div>
             </div>
 
-            <div class="header-right">
+            <!-- 2. Área Central: Barra de Búsqueda (Nueva estructura para centrarla) -->
+            <div class="header-center">
                 <div class="search-bar-container">
                     <input type="text" id="homeSearchInput" placeholder="Buscar productos, marcas, cuadernos..." onkeypress="handleSearch(event)">
                     <button onclick="executeSearch()">🔍</button>
                 </div>
+            </div>
+
+            <!-- 3. Área Derecha: Menú y Carrito (Volviendo al diseño original) -->
+            <div class="header-right">
                 <ul class="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="escolar.html">Escolar</a></li>
@@ -39,11 +45,12 @@
                     <li><a href="oficina.html">Oficina</a></li>
                     <li><a href="tienda.html" style="color: var(--primary-blue);">Tienda Online</a></li>
                 </ul>
-            </div>
 
-            <button class="cart-btn" onclick="toggleCart()">
-                🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
-            </button>
+                <!-- Botón de carrito original (pequeño y elegante) -->
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
+                </button>
+            </div>
         </div>
     </header>
     <!-- Contenido Principal -->
