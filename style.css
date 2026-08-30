@@ -241,7 +241,7 @@ header {
     width: 100%;
     max-height: 220px;
     object-fit: contain;
-    background: transparent !important;
+    background: none !important;
 }
 /* Los 3 Bloques Inferiores (Tienda, Horarios, Delivery) */
 .hero-boxes-centered {
