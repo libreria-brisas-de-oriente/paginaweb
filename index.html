@@ -8,7 +8,7 @@
 </head>
 <body>
 
-       <!-- Barra Superior -->
+    <!-- Barra Superior -->
     <div class="top-bar">
         <div class="top-bar-container">
             <span>📍 C.C. Lucymar PB Local 5, Av. La Atlántida, Catia la Mar, La Guaira</span>
@@ -16,9 +16,10 @@
         </div>
     </div>
 
-    <!-- Header Principal -->
-<header>
+    <!-- Header Principal (CORREGIDO Y AGRUPADO) -->
+    <header>
         <div class="nav-container">
+            <!-- 1. Logo a la Izquierda -->
             <div class="logo-area">
                 <img src="img/logo.png" alt="Brisas de Oriente Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Brisas+de+Oriente'">
                 <div class="logo-text">
@@ -27,29 +28,37 @@
                 </div>
             </div>
 
-            <div class="header-right">
+            <!-- 2. Contenedor Derecho (Búsqueda y Menú Juntos) -->
+            <div class="header-right-group">
+                <!-- Barra de búsqueda (Arriba) -->
                 <div class="search-bar-container">
                     <input type="text" id="homeSearchInput" placeholder="Buscar productos, marcas, cuadernos..." onkeypress="handleSearch(event)">
                     <button onclick="executeSearch()">🔍</button>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="escolar.html">Escolar</a></li>
-                    <li><a href="libros.html">Libros y Textos</a></li>
-                    <li><a href="oficina.html">Oficina</a></li>
-                    <li><a href="tienda.html" style="color: var(--primary-blue);">Tienda Online</a></li>
-                </ul>
-            </div>
 
-            <button class="cart-btn" onclick="toggleCart()">
-                🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
-            </button>
+                <!-- Menú de navegación (Abajo, en fila horizontal) -->
+                <div class="menu-cart-row">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="escolar.html">Escolar</a></li>
+                        <li><a href="libros.html">Libros y Textos</a></li>
+                        <li><a href="oficina.html">Oficina</a></li>
+                        <li><a href="tienda.html" style="color: var(--primary-blue);">Tienda Online</a></li>
+                    </ul>
+                    
+                    <!-- Botón del Carrito (Al lado del menú) -->
+                    <button class="cart-btn" onclick="toggleCart()">
+                        🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
+
     <!-- Contenido Principal -->
     <div class="main-wrapper" id="inicio">
 
-        <!-- Sección Hero con Fondo, Frase Publicitaria, Imagen y 3 Bloques Centrados Abajo -->
+        <!-- Sección Hero (BANNER CORREGIDO) -->
         <section class="hero-section">
             <div class="hero-top-layout">
                 <div class="hero-content">
@@ -57,12 +66,13 @@
                     <p>Inspira tus días y potencia tus ideas. Encuentra artículos escolares, de oficina, textos y material creativo con la mejor calidad y atención garantizada.</p>
                 </div>
                 
-                <div style="background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; display: flex; align-items: right; justify-content: center; width: 380px;">
+                <!-- LOGO GRANDE Y TRANSPARENTE A LA DERECHA (Estilos forzados en línea para eliminar el cuadro gris) -->
+                <div style="background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; display: flex; align-items: center; justify-content: flex-end; width: 380px; flex-shrink: 0;">
                     <img src="img/logo2.png" alt="Logo Blanco Brisas de Oriente" style="width: 100%; max-height: 220px; object-fit: contain; background: transparent !important;" onerror="this.src='https://via.placeholder.com/300x180?text=Brisas+de+Oriente'">
                 </div>
             </div>
 
-            <!-- 3 Bloques Centrados (Tienda, Horarios, Delivery) tal cual el esquema -->
+            <!-- 3 Bloques Inferiores -->
             <div class="hero-boxes-centered">
                 <div class="hero-box-item">
                     <h4>Tienda</h4>
@@ -79,7 +89,7 @@
             </div>
         </section>
 
-        <!-- Zona Hot (Productos en Oferta con fotos reales) -->
+        <!-- Zona Hot (Productos en Oferta) -->
         <section id="ofertas">
             <h2 class="section-header">Zona Hot (Productos en Oferta)</h2>
             <div class="products-grid">
@@ -162,17 +172,17 @@
                 
                 <a href="escolar.html" class="category-card">
                     <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Escolar">
-                    <div class="category-overlay"><h3>Escolar (Ver 12 productos)</h3></div>
+                    <div class="category-overlay"><h3>Escolar</h3></div>
                 </a>
 
                 <a href="libros.html" class="category-card">
                     <img src="https://images.unsplash.com/photo-1522748135503-2e0c9676752d?auto=format&fit=crop&w=600&q=80" alt="Libros">
-                    <div class="category-overlay"><h3>Libros y Textos (Ver 10 productos)</h3></div>
+                    <div class="category-overlay"><h3>Libros y Textos</h3></div>
                 </a>
 
                 <a href="oficina.html" class="category-card">
                     <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80" alt="Oficina">
-                    <div class="category-overlay"><h3>Oficina (Ver 10 productos)</h3></div>
+                    <div class="category-overlay"><h3>Oficina</h3></div>
                 </a>
 
             </div>
@@ -233,7 +243,7 @@
         </div>
     </div>
 
-        <!-- Script del Carrito y Búsqueda -->
+    <!-- Script del Carrito y Búsqueda -->
     <script>
         function executeSearch() {
             const query = document.getElementById('homeSearchInput').value.trim();
@@ -265,105 +275,3 @@
         }
 
         function updateCartUI() {
-            const counter = document.getElementById('cart-counter');
-            const container = document.getElementById('cartItemsContainer');
-            const totalElement = document.getElementById('cartTotalPrice');
-
-            if (counter) counter.innerText = cart.length;
-            if (!container) return;
-
-            if (cart.length === 0) {
-                container.innerHTML = '<p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>';
-                if (totalElement) totalElement.innerText = '$0.00 USD';
-                return;
-            }
-
-            let html = '';
-            let total = 0;
-
-            cart.forEach((item, index) => {
-                total += item.price;
-                html += `
-                    <div class="cart-item">
-                        <div>
-                            <strong>${item.name}</strong><br>
-                            <small>$${item.price.toFixed(2)} USD</small>
-                        </div>
-                        <button onclick="removeItem(${index})" style="background:#e53e3e; color:white; border:none; padding:0.2rem 0.5rem; border-radius:4px; cursor:pointer;">X</button>
-                    </div>
-                `;
-            });
-
-            container.innerHTML = html;
-            if (totalElement) totalElement.innerText = `$${total.toFixed(2)} USD`;
-        }
-
-        function removeItem(index) {
-            cart.splice(index, 1);
-            localStorage.setItem('cart_brisas', JSON.stringify(cart));
-            updateCartUI();
-        }
-
-        function checkoutOrder() {
-            if (cart.length === 0) {
-                alert('Tu carrito está vacío.');
-                return;
-            }
-            alert('¡Gracias por tu compra en Brisas de Oriente! Tu pedido ha sido procesado con éxito.');
-            cart = [];
-            localStorage.removeItem('cart_brisas');
-            updateCartUI();
-            toggleCart();
-        }
-    </script>
-</body>
-<footer id="contacto">
-        
-        <!-- Sección de Suscripción al Boletín -->
-<div class="newsletter-section">
-            <div class="newsletter-container">
-                <!-- Aquí usará tu logo blanco (logo2.png) -->
-                <img src="img/logo2.png" alt="Brisas de Oriente Logo Blanco" class="newsletter-logo" onerror="this.src='https://via.placeholder.com/120x50?text=Brisas+de+Oriente'">
-                <p>Deja tus datos y te estaremos enviando información valiosa sobre promociones, beneficios, y próximos eventos.</p>
-                
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte a nuestro boletín!');">
-                    <input type="email" class="newsletter-input" placeholder="Correo electrónico" required>
-                    <button type="submit" class="newsletter-btn">Unirme</button>
-                </form>
-            </div>
-        </div>
-        <!-- Enlaces y Datos de la Tienda -->
-        <div class="footer-container" style="padding-top: 3rem;">
-            <div class="footer-col">
-                <h3>Brisas de Oriente</h3>
-                <p><strong>Dirección:</strong> Centro Comercial Lucymar PB local 5, Av. La Atlántida, Catia la Mar, Estado La Guaira, Venezuela.</p>
-                <p><strong>Correo electrónico:</strong> mariangely1313@gmail.com</p>
-                <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">Proyecto Académico - Alumna: Mariangely Del Valle Rodríguez Ozuna | Institución: IUTIRLA</p>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Descubre más</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html">Tienda Online</a></li>
-                    <li><a href="escolar.html">Catálogo Escolar</a></li>
-                    <li><a href="libros.html">Libros y Textos</a></li>
-                    <li><a href="oficina.html">Catálogo Oficina</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Comunidad Digital</h3>
-                <p>Síguenos en nuestras redes sociales oficiales:</p>
-                <div class="social-icons-footer">
-                    <a href="https://www.instagram.com/libreria_brisasdeoriente" target="_blank" class="social-badge">Instagram</a>
-                    <a href="https://www.tiktok.com/@libreriabrisasdeo" target="_blank" class="social-badge">TikTok</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Brisas de Oriente. Todos los derechos reservados. Diseñado para equipos de escritorio.</p>
-        </div>
-    </footer>
-</html>
