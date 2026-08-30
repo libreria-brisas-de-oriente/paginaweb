@@ -485,7 +485,7 @@ header {
 .brands-center-box {
     background-color: #ffffff;
     color: var(--primary-blue);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1.5rem 1rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
@@ -497,9 +497,8 @@ header {
 }
 
 .brands-center-box img {
-    width: 190px;
-    max-width: 100%;
-    max-height: 140px;
+    width: 85% !important;     /* Ocupa el 85% del ancho de la caja */
+    max-height: 160px !important; /* Altura generosa para que luzca imponente */
     object-fit: contain;
     flex-grow: 1;
 }
