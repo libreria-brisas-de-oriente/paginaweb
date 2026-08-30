@@ -87,11 +87,10 @@ header {
 .nav-container {
     width: 1160px;
     margin: 0 auto;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     display: flex;
     justify-content: space-between; /* Separa logo de la derecha */
     align-items: center;
-    height: 90px; /* Altura fija para alinear todo */
 }
 
 .logo-area {
@@ -101,8 +100,9 @@ header {
 }
 
 .logo-img {
-    height: 50px;
+    height: 55px;
     width: auto;
+      object-fit: contain;
 }
 
 .logo-text h1 { font-size: 1.3rem; color: var(--primary-blue); font-weight: 700; }
