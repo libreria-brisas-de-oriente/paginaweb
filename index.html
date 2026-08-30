@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brisas de Oriente - Papelería Escolar y de Oficina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <span>📍 C.C. Lucymar PB Local 5, Av. La Atlántida, Catia la Mar, La Guaira</span>
+            <span>📦 Delivery disponible en La Guaira y Caracas (Pedidos mayores a 20$)</span>
+        </div>
+    </div>
+
+    <!-- Header Principal -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="img/logo.png" alt="Brisas de Oriente Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Brisas+de+Oriente'">
+                <div class="logo-text">
+                    <h1>Brisas de Oriente</h1>
+                    <span>Papelería Escolar y de Oficina</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="search-bar-container">
+                    <input type="text" id="homeSearchInput" placeholder="Buscar productos, marcas, cuadernos..." onkeypress="handleSearch(event)">
+                    <button onclick="executeSearch()">🔍</button>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="escolar.html">Escolar</a></li>
+                    <li><a href="libros.html">Libros y Textos</a></li>
+                    <li><a href="oficina.html">Oficina</a></li>
+                    <li><a href="tienda.html" style="color: var(--primary-blue);">Tienda Online</a></li>
+                </ul>
+            </div>
+
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="main-wrapper" id="inicio">
+
+        <!-- Sección Hero con Fondo, Frase Publicitaria, Imagen y 3 Bloques Centrados Abajo -->
+        <section class="hero-section">
+            <div class="hero-top-layout">
+                <div class="hero-content">
+                    <h2>Todo lo que necesitas en un solo lugar</h2>
+                    <p>Inspira tus días y potencia tus ideas. Encuentra artículos escolares, de oficina, textos y material creativo con la mejor calidad y atención garantizada.</p>
+                </div>
+                
+                <div class="hero-image-container">
+                    <img src="img/logo.png" alt="Imagen Publicitaria Brisas de Oriente" onerror="this.src='https://via.placeholder.com/250x180?text=Brisas+de+Oriente'">
+                </div>
+            </div>
+
+            <!-- 3 Bloques Centrados (Tienda, Horarios, Delivery) tal cual el esquema -->
+            <div class="hero-boxes-centered">
+                <div class="hero-box-item">
+                    <h4>Tienda</h4>
+                    <p>C.C. Lucymar, Catia la Mar, La Guaira</p>
+                </div>
+                <div class="hero-box-item">
+                    <h4>Horarios</h4>
+                    <p>Lun-Vie: 8am - 5pm<br>Sáb: 8am - 3pm</p>
+                </div>
+                <div class="hero-box-item">
+                    <h4>Delivery</h4>
+                    <p>Envíos seguros en La Guaira y Caracas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zona Hot (Productos en Oferta con fotos reales) -->
+        <section id="ofertas">
+            <h2 class="section-header">Zona Hot (Productos en Oferta)</h2>
+            <div class="products-grid">
+                
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <span class="category-tag">Escolar</span>
+                        <img src="https://lh3.googleusercontent.com/hE1rF9ZZEye5SiPWK8bzxvqZup86st5t8peTK0Aa-FEBUB1q8ArHLOsgmPaZxO1c_FJNCshd7xVmP9JFKtkDE9dBrvCNVlEkmXI9L3MZ4RlSRN4" alt="Lápices Mongol">
+                    </div>
+                    <div class="product-info">
+                        <h3>Paper Mate - Caja de Lápices Mongol 12und</h3>
+                        <div>
+                            <div class="product-price">
+                                <span class="current-price">$3.80 USD</span>
+                                <span class="old-price">$4.50 USD</span>
+                            </div>
+                            <button class="btn-buy" onclick="addToCart('Paper Mate - Lápices Mongol', 3.80)">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <span class="category-tag">Escolar</span>
+                        <img src="https://cdn.prod.website-files.com/626078556037c589033cb5e9/6448718889df4ac08c827186_Colores%20Kores.png" alt="Creyones Kores">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kores - Creyones de madera 12 und</h3>
+                        <div>
+                            <div class="product-price">
+                                <span class="current-price">$5.50 USD</span>
+                                <span class="old-price">$6.80 USD</span>
+                            </div>
+                            <button class="btn-buy" onclick="addToCart('Kores - Creyones 12 und', 5.50)">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <span class="category-tag" style="background-color: var(--accent-orange);">Best Sellers</span>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC72uQWQlVRdbLdKb05VMMg-hveQVIWssCkaITaWHCobz9WXfqdRvFqP4&s=10" alt="Libro A través de mi ventana">
+                    </div>
+                    <div class="product-info">
+                        <h3>Santillana - Libro A través de mi ventana</h3>
+                        <div>
+                            <div class="product-price">
+                                <span class="current-price">$15.00 USD</span>
+                                <span class="old-price">$18.00 USD</span>
+                            </div>
+                            <button class="btn-buy" onclick="addToCart('Libro A través de mi ventana', 15.00)">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <span class="category-tag">Escolar</span>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkJthTy8Z0jjYbVLbh2qw0Mcv240ieA0Xug_Pja2n0fw&s=10" alt="Acuarelas Pointer">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pointer - Set Acuarela 12 colores</h3>
+                        <div>
+                            <div class="product-price">
+                                <span class="current-price">$4.00 USD</span>
+                                <span class="old-price">$6.00 USD</span>
+                            </div>
+                            <button class="btn-buy" onclick="addToCart('Pointer - Set Acuarela', 4.00)">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Catálogo Esencial -->
+        <section id="categorias">
+            <h2 class="section-header">Catálogo Esencial</h2>
+            <div class="categories-grid">
+                
+                <a href="escolar.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Escolar">
+                    <div class="category-overlay"><h3>Escolar (Ver 12 productos)</h3></div>
+                </a>
+
+                <a href="libros.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1522748135503-2e0c9676752d?auto=format&fit=crop&w=600&q=80" alt="Libros">
+                    <div class="category-overlay"><h3>Libros y Textos (Ver 10 productos)</h3></div>
+                </a>
+
+                <a href="oficina.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80" alt="Oficina">
+                    <div class="category-overlay"><h3>Oficina (Ver 10 productos)</h3></div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Marcas Aliadas -->
+        <section class="brands-section" id="marcas">
+            <h2 class="section-header" style="margin-bottom: 0.5rem;">Marcas Aliadas</h2>
+            <p style="color: #718096; margin-bottom: 1.5rem;">Explora los sellos de prestigio con los que colaboramos para garantizar la mejor calidad.</p>
+            
+            <div class="brands-banner-wrapper">
+                <div class="brands-layout-container">
+                    
+                    <div class="brands-column">
+                        <div class="brand-card-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Kores_Logo.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original" alt="Kores"></div>
+                        <div class="brand-card-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Logo_Norma_nuevo.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original" alt="Norma"></div>
+                        <div class="brand-card-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Prismacolor_logo.svg/1280px-Prismacolor_logo.svg.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Prismacolor"></div>
+                        <div class="brand-card-ref"><img src="https://artescooficial.com/artesco_facebook.jpg" alt="Artesco"></div>
+                        <div class="brand-card-ref"><img src="https://logos-world.net/wp-content/uploads/2023/03/Casio-Logo.png" alt="Casio"></div>
+                        <div class="brand-card-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Sharpie_markers_logo.svg/960px-Sharpie_markers_logo.svg.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Sharpie"></div>
+                    </div>
+
+                    <div class="brands-center-box">
+                        <img src="img/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/140x60?text=Logo'">
+                        <h3>Somos + que una Librería</h3>
+                    </div>
+
+                    <div class="brands-column">
+                        <div class="brand-card-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Paper_mate_textlogo.svg/3840px-Paper_mate_textlogo.svg.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Paper Mate"></div>
+                        <div class="brand-card-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/UHU_logo.svg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original" alt="UHU"></div>
+                        <div class="brand-card-ref"><img src="https://sanfordbrandsvzla.com/wp-content/uploads/2025/02/mongol-imagen-home.png" alt="Mongol"></div>
+                        <div class="brand-card-ref"><img src="https://1000logos.net/wp-content/uploads/2022/07/Staedtler-logo.png" alt="Staedtler"></div>
+                        <div class="brand-card-ref"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7XFwlZK2iCwqBMzZX99pZZMDnLP-3VdS514ZQTCfglg&s=10" alt="Faber-Castell"></div>
+                        <div class="brand-card-ref"><img src="https://1000marcas.net/wp-content/uploads/2020/11/Crayola-Logo.png" alt="Crayola"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Panel del Carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Tu Carrito de Compras</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">$0.00 USD</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutOrder()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Brisas de Oriente</h3>
+                <p><strong>Dirección:</strong> Centro Comercial Lucymar PB local 5, Av. La Atlántida, Catia la Mar, Estado La Guaira, Venezuela.</p>
+                <p><strong>Correo electrónico:</strong> mariangely1313@gmail.com</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">Proyecto Académico - Alumna: Mariangely Del Valle Rodríguez Ozuna | Institución: IUTIRLA</p>
+            </div>
+            <div class="footer-col">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="escolar.html">Catálogo Escolar</a></li>
+                    <li><a href="libros.html">Libros y Textos</a></li>
+                    <li><a href="oficina.html">Catálogo Oficina</a></li>
+                    <li><a href="tienda.html">Tienda Online</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Comunidad Digital</h3>
+                <p>Síguenos en nuestras redes sociales oficiales:</p>
+                <div class="social-icons-footer">
+                    <a href="https://www.instagram.com/libreria_brisasdeoriente" target="_blank" class="social-badge">Instagram</a>
+                    <a href="https://www.tiktok.com/@libreriabrisasdeoriente" target="_blank" class="social-badge">TikTok</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Brisas de Oriente. Todos los derechos reservados. Diseñado para equipos de escritorio.</p>
+        </div>
+    </footer>
+
+    <!-- Script del Carrito y Búsqueda -->
+    <script>
+        function executeSearch() {
+            const query = document.getElementById('homeSearchInput').value.trim();
+            if (query) {
+                window.location.href = `tienda.html?search=${encodeURIComponent(query)}`;
+            } else {
+                window.location.href = 'tienda.html';
+            }
+        }
+
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                executeSearch();
+            }
+        }
+
+        let cart = JSON.parse(localStorage.getItem('cart_brisas')) || [];
+        updateCartUI();
+
+        function toggleCart() {
+            document.getElementById('cartModal').classList.toggle('open');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            localStorage.setItem('cart_brisas', JSON.stringify(cart));
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const counter = document.getElementById('cart-counter');
+            const container = document.getElementById('cartItemsContainer');
+            const totalElement = document.getElementById('cartTotalPrice');
+
+            if (counter) counter.innerText = cart.length;
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>';
+                if (totalElement) totalElement.innerText = '$0.00 USD';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.name}</strong><br>
+                            <small>$${item.price.toFixed(2)} USD</small>
+                        </div>
+                        <button onclick="removeItem(${index})" style="background:#e53e3e; color:white; border:none; padding:0.2rem 0.5rem; border-radius:4px; cursor:pointer;">X</button>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            if (totalElement) totalElement.innerText = `$${total.toFixed(2)} USD`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart_brisas', JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function checkoutOrder() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío.');
+                return;
+            }
+            alert('¡Gracias por tu compra en Brisas de Oriente! Tu pedido ha sido procesado con éxito.');
+            cart = [];
+            localStorage.removeItem('cart_brisas');
+            updateCartUI();
+            toggleCart();
+        }
+    </script>
+</body>
+<footer id="contacto">
+        
+        <!-- Sección de Suscripción al Boletín -->
+<div class="newsletter-section">
+            <div class="newsletter-container">
+                <!-- Aquí usará tu logo blanco (logo2.png) -->
+                <img src="img/logo2.png" alt="Brisas de Oriente Logo Blanco" class="newsletter-logo" onerror="this.src='https://via.placeholder.com/120x50?text=Brisas+de+Oriente'">
+                <p>Deja tus datos y te estaremos enviando información valiosa sobre promociones, beneficios, y próximos eventos.</p>
+                
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte a nuestro boletín!');">
+                    <input type="email" class="newsletter-input" placeholder="Correo electrónico" required>
+                    <button type="submit" class="newsletter-btn">Unirme</button>
+                </form>
+            </div>
+        </div>
+        <!-- Enlaces y Datos de la Tienda -->
+        <div class="footer-container" style="padding-top: 3rem;">
+            <div class="footer-col">
+                <h3>Brisas de Oriente</h3>
+                <p><strong>Dirección:</strong> Centro Comercial Lucymar PB local 5, Av. La Atlántida, Catia la Mar, Estado La Guaira, Venezuela.</p>
+                <p><strong>Correo electrónico:</strong> mariangely1313@gmail.com</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">Proyecto Académico - Alumna: Mariangely Del Valle Rodríguez Ozuna | Institución: IUTIRLA</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Descubre más</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda Online</a></li>
+                    <li><a href="escolar.html">Catálogo Escolar</a></li>
+                    <li><a href="libros.html">Libros y Textos</a></li>
+                    <li><a href="oficina.html">Catálogo Oficina</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Comunidad Digital</h3>
+                <p>Síguenos en nuestras redes sociales oficiales:</p>
+                <div class="social-icons-footer">
+                    <a href="https://www.instagram.com/libreria_brisasdeoriente" target="_blank" class="social-badge">Instagram</a>
+                    <a href="https://www.tiktok.com/@libreriabrisasdeoriente" target="_blank" class="social-badge">TikTok</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Brisas de Oriente. Todos los derechos reservados. Diseñado para equipos de escritorio.</p>
+        </div>
+    </footer>
+</html>

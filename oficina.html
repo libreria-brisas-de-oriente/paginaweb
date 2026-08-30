@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos de Oficina - Brisas de Oriente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <span>📍 C.C. Lucymar PB Local 5, Av. La Atlántida, Catia la Mar, La Guaira</span>
+            <span>💼 Catálogo de Artículos de Oficina (10 Productos)</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="img/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Brisas+de+Oriente'">
+                <div class="logo-text">
+                    <h1>Brisas de Oriente</h1>
+                    <span>Insumos y Artículos de Oficina</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="escolar.html">Escolar</a></li>
+                    <li><a href="libros.html">Libros</a></li>
+                    <li><a href="oficina.html" style="color: var(--primary-blue);">Oficina</a></li>
+                </ul>
+            </div>
+
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <h2 class="section-header">Insumos y Soluciones Corporativas</h2>
+        <p style="color: #718096; margin-bottom: 2rem;">Todo lo que tu espacio de trabajo o despacho necesita para mantener la máxima productividad.</p>
+
+        <div class="products-grid">
+            
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEwEJ3WaqM8yKrrQuEXOFChShiwAcNV2oFu0wwzR1MCg&s" alt="Resma">
+                </div>
+                <div class="product-info">
+                    <h3>Ofimack - Resma de Papel Bond Tamaño Carta 500h</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$6.50 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Resma Papel Bond Carta', 6.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcor7Zqb8bQMHz8DrerbIAPvSL81-Kv-qjpUvnzk0qGw&s" alt="Carpetas">
+                </div>
+                <div class="product-info">
+                    <h3>Ofimack - Caja de Carpeta Marrón Oficio x100</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$18.00 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Caja Carpeta Marrón x100', 18.00)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://www.libreriaeuropa.com.ve/libreria_media/producto/725275/0000725275.jpg" alt="Archivador">
+                </div>
+                <div class="product-info">
+                    <h3>Sysabe - Archivador de Palanca Lomo Ancho Oficio</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$3.50 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Archivador Lomo Ancho', 3.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE7ktEn3wbV9k_IovXUJzg8C8FNPMVfdHrwcRkyhMgkg&s=10" alt="Boligrafos">
+                </div>
+                <div class="product-info">
+                    <h3>Paper Mate - Caja de Bolígrafos InkJoy x12</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$4.20 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Bolígrafos InkJoy x12', 4.20)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjF7GasP8IZzHz6GjY4NRbhX_W-HwmElMMidTcvDmx_w&s=10" alt="Grapadora">
+                </div>
+                <div class="product-info">
+                    <h3>Artesco - Grapadora Metálica de Mesa Media</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$5.00 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Grapadora Metálica', 5.00)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJ-nK7VHv_lFWd8Ezeu2jcr-oaJmFPcA3VLUFAgAkQA&s=10" alt="Perforadora">
+                </div>
+                <div class="product-info">
+                    <h3>Artesco - Perforadora de Hojas 2 Huecos</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$4.80 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Perforadora 2 Huecos', 4.80)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpa0Q4d7TY2_z8_myOj0Jhaakrk-uIw2osEeGZyJz_PQ&s=10" alt="Notas adhesivas">
+                </div>
+                <div class="product-info">
+                    <h3>Kores - Notas Adhesivas Post-it 3x3 Block x4</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$3.00 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Notas Adhesivas Post-it x4', 3.00)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGSFa-UxB6uQ3ixOo3QqdaAVo6EWeyclsZmQW-ukhR4w&s" alt="Marcadores pizarra">
+                </div>
+                <div class="product-info">
+                    <h3>Sharpie - Marcador para Pizarra Acrílica x4</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$5.50 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Marcadores Pizarra x4', 5.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMfrMg891q6aU4NVPxpRZ_l-l_WYYkml-kD_LxULfuiA&s=10" alt="Cinta adhesiva">
+                </div>
+                <div class="product-info">
+                    <h3>Kores - Cinta adhesiva transparente con dispensador</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$1.50 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Cinta Transparente c/Dispensador', 1.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Oficina</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSObZs1l-qGkUg6Tta4Bt_EUErfvxFiGQiBH5hjas1yjA&s=10" alt="Calculadora Casio">
+                </div>
+                <div class="product-info">
+                    <h3>Casio - Calculadora Científica FX-82MS</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$14.00 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Calculadora Científica Casio', 14.00)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Panel del Carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Tu Carrito de Compras</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">$0.00 USD</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutOrder()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart_brisas')) || [];
+        updateCartUI();
+        function toggleCart() { document.getElementById('cartModal').classList.toggle('open'); }
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            localStorage.setItem('cart_brisas', JSON.stringify(cart));
+            updateCartUI();
+            toggleCart();
+        }
+        function updateCartUI() {
+            const counter = document.getElementById('cart-counter');
+            const container = document.getElementById('cartItemsContainer');
+            const totalElement = document.getElementById('cartTotalPrice');
+            if (counter) counter.innerText = cart.length;
+            if (!container) return;
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>';
+                if (totalElement) totalElement.innerText = '$0.00 USD';
+                return;
+            }
+            let html = '', total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `<div class="cart-item"><div><strong>${item.name}</strong><br><small>$${item.price.toFixed(2)} USD</small></div><button onclick="removeItem(${index})" style="background:#e53e3e; color:white; border:none; padding:0.2rem 0.5rem; border-radius:4px; cursor:pointer;">X</button></div>`;
+            });
+            container.innerHTML = html;
+            if (totalElement) totalElement.innerText = `$${total.toFixed(2)} USD`;
+        }
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart_brisas', JSON.stringify(cart));
+            updateCartUI();
+        }
+        function checkoutOrder() {
+            if (cart.length === 0) { alert('Tu carrito está vacío.'); return; }
+            alert('¡Gracias por tu compra en Brisas de Oriente! Tu pedido ha sido procesado con éxito.');
+            cart = [];
+            localStorage.removeItem('cart_brisas');
+            updateCartUI();
+            toggleCart();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Escolar - Brisas de Oriente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <span>📍 C.C. Lucymar PB Local 5, Av. La Atlántida, Catia la Mar, La Guaira</span>
+            <span>📦 Catálogo Escolar Completo (12 Productos)</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="img/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Brisas+de+Oriente'">
+                <div class="logo-text">
+                    <h1>Brisas de Oriente</h1>
+                    <span>Catálogo Escolar</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="escolar.html" style="color: var(--primary-blue);">Escolar</a></li>
+                    <li><a href="libros.html">Libros</a></li>
+                    <li><a href="oficina.html">Oficina</a></li>
+                </ul>
+            </div>
+
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <h2 class="section-header">Artículos del Área Escolar</h2>
+        <p style="color: #718096; margin-bottom: 2rem;">Selección especial con los mejores útiles escolares para acompañar tus clases y metas académicas.</p>
+
+        <div class="products-grid">
+            
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://lh3.googleusercontent.com/hE1rF9ZZEye5SiPWK8bzxvqZup86st5t8peTK0Aa-FEBUB1q8ArHLOsgmPaZxO1c_FJNCshd7xVmP9JFKtkDE9dBrvCNVlEkmXI9L3MZ4RlSRN4" alt="Lápices Mongol">
+                </div>
+                <div class="product-info">
+                    <h3>Paper Mate - Caja de Lápices Mongol 12und</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$3.80 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Paper Mate - Lápices Mongol', 3.80)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://cdn.prod.website-files.com/626078556037c589033cb5e9/6448718889df4ac08c827186_Colores%20Kores.png" alt="Creyones Kores">
+                </div>
+                <div class="product-info">
+                    <h3>Kores - Creyones de madera 12 und</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$5.50 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Kores - Creyones 12 und', 5.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkJthTy8Z0jjYbVLbh2qw0Mcv240ieA0Xug_Pja2n0fw&s=10" alt="Acuarelas Pointer">
+                </div>
+                <div class="product-info">
+                    <h3>Pointer - Set Acuarela 12 colores</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$4.00 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Pointer - Set Acuarela', 4.00)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://laproveedora.com/images/portadas/CCCOLOR9077044.webp?1784106758" alt="Cuaderno Norma">
+                </div>
+                <div class="product-info">
+                    <h3>Norma - Cuaderno Rayado 100 Hojas</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$2.50 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Norma - Cuaderno 100 Hojas', 2.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_705356-MLV47952859654_102021-O.webp" alt="Borrador Artesco">
+                </div>
+                <div class="product-info">
+                    <h3>Artesco - Borrador de Nata Blister x2</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$1.20 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Artesco - Borrador Nata x2', 1.20)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://www.kores.com/co/wp-content/uploads/sites/23/fly-images/6943/Sharpeners_Sacapuntas_black_silver-700x9999.png" alt="Sacapuntas Kores">
+                </div>
+                <div class="product-info">
+                    <h3>Kores - Sacapuntas Metálico con Depósito</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$1.50 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Kores - Sacapuntas Metálico', 1.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX87rmpFkq4Rtk2faRLDm4S6tuDWe7KF9EyKholvJ0Yw&s=10" alt="Tijera Artesco">
+                </div>
+                <div class="product-info">
+                    <h3>Artesco - Tijera Escolar Punta Roma</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$2.00 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Artesco - Tijera Escolar', 2.00)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://http2.mlstatic.com/D_Q_NP_2X_813309-MLV116721808019_082026-T.webp" alt="Estuche Prismacolor">
+                </div>
+                <div class="product-info">
+                    <h3>Prismacolor - Estuche Escolar Multiuso</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$6.00 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Prismacolor - Estuche Multiuso', 6.00)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://officenet.net.ve/67158-large_default/juego-geometrico-flexible-30cm-4pzs-pointer.jpg" alt="Juego geométrico Pointer">
+                </div>
+                <div class="product-info">
+                    <h3>Pointer - Juego Geométrico 30cm</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$1.80 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Pointer - Juego Geométrico', 1.80)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://cfluna.com/assets/districomp.com.uy/files/tmp/compressed/normal/hqy9ms54on0r8uqw7l8z.jpg" alt="UHU">
+                </div>
+                <div class="product-info">
+                    <h3>UHU - Barra Adhesiva 21g</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$2.20 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('UHU - Barra Adhesiva 21g', 2.20)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGR0r7xfzEuLaceI1KMlv1oZt3atf9RCjACcwt1pR1gg&s=10" alt="Crayola">
+                </div>
+                <div class="product-info">
+                    <h3>Crayola - Marcadores Lavables 10und</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$7.50 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Crayola - Marcadores 10und', 7.50)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-container">
+                    <span class="category-tag">Escolar</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6kCG34hNMifU6i0-QxkHjj3tdF06C1pSaJ-WVlBmN4g&s=10" alt="Carpeta Ofimack">
+                </div>
+                <div class="product-info">
+                    <h3>Ofimack - Carpeta Marrón Oficio c/Liga</h3>
+                    <div>
+                        <div class="product-price"><span class="current-price">$0.80 USD</span></div>
+                        <button class="btn-buy" onclick="addToCart('Ofimack - Carpeta Marrón', 0.80)">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Panel del Carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Tu Carrito de Compras</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">$0.00 USD</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutOrder()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart_brisas')) || [];
+        updateCartUI();
+
+        function toggleCart() {
+            document.getElementById('cartModal').classList.toggle('open');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            localStorage.setItem('cart_brisas', JSON.stringify(cart));
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const counter = document.getElementById('cart-counter');
+            const container = document.getElementById('cartItemsContainer');
+            const totalElement = document.getElementById('cartTotalPrice');
+
+            if (counter) counter.innerText = cart.length;
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>';
+                if (totalElement) totalElement.innerText = '$0.00 USD';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="cart-item">
+                        <div>
+                            <strong>${item.name}</strong><br>
+                            <small>$${item.price.toFixed(2)} USD</small>
+                        </div>
+                        <button onclick="removeItem(${index})" style="background:#e53e3e; color:white; border:none; padding:0.2rem 0.5rem; border-radius:4px; cursor:pointer;">X</button>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            if (totalElement) totalElement.innerText = `$${total.toFixed(2)} USD`;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart_brisas', JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function checkoutOrder() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío.');
+                return;
+            }
+            alert('¡Gracias por tu compra en Brisas de Oriente! Tu pedido ha sido procesado con éxito.');
+            cart = [];
+            localStorage.removeItem('cart_brisas');
+            updateCartUI();
+            toggleCart();
+        }
+    </script>
+</body>
+</html>

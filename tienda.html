@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda y Búsqueda - Brisas de Oriente</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shop-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .filters-sidebar {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+        .filters-sidebar h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-orange);
+            padding-bottom: 0.4rem;
+        }
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .price-slider {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .results-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .clear-filters {
+            color: var(--primary-blue);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <span>📍 C.C. Lucymar PB Local 5, Av. La Atlántida, Catia la Mar, La Guaira</span>
+            <span>📦 Tienda Online y Filtros de Búsqueda</span>
+        </div>
+    </div>
+
+    <!-- Header Principal -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="img/logo.png" alt="Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x50?text=Brisas+de+Oriente'">
+                <div class="logo-text">
+                    <h1>Brisas de Oriente</h1>
+                    <span>Tienda Online</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="search-bar-container">
+                    <input type="text" id="searchInputTop" placeholder="Buscar productos..." oninput="filterProducts()">
+                    <button onclick="filterProducts()">🔍</button>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="escolar.html">Escolar</a></li>
+                    <li><a href="libros.html">Libros</a></li>
+                    <li><a href="oficina.html">Oficina</a></li>
+                    <li><a href="tienda.html" style="color: var(--primary-blue);">Tienda y Filtros</a></li>
+                </ul>
+            </div>
+
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Carrito <span class="cart-count" id="cart-counter">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal con Filtros -->
+    <div class="main-wrapper">
+        <div class="shop-layout">
+            
+            <!-- Barra Lateral de Filtros (Igual a la foto de referencia) -->
+            <aside class="filters-sidebar">
+                <h3>Filtros</h3>
+                
+                <div class="filter-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <strong>Categoría</strong>
+                        <button class="clear-filters" onclick="resetCategory()">Quitar filtro</button>
+                    </div>
+                    <div style="margin-top: 0.8rem;">
+                        <label><input type="checkbox" name="cat" value="Escolar" onchange="filterProducts()"> Escolar</label>
+                        <label><input type="checkbox" name="cat" value="Libros" onchange="filterProducts()"> Libros</label>
+                        <label><input type="checkbox" name="cat" value="Oficina" onchange="filterProducts()"> Oficina</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <strong>Precio Máximo</strong>
+                        <button class="clear-filters" onclick="resetPrice()">Quitar filtro</button>
+                    </div>
+                    <input type="range" id="priceRange" class="price-slider" min="0" max="25" value="25" step="0.5" oninput="filterProducts()">
+                    <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.9rem; color: #718096;">
+                        <span>$0</span>
+                        <span id="priceLimitText">$25.00 USD</span>
+                    </div>
+                </div>
+
+                <button class="btn-buy" style="background-color: #e2e8f0; color: var(--text-dark); margin-top: 1rem;" onclick="clearAllFilters()">Limpiar todo</button>
+            </aside>
+
+            <!-- Resultados de Productos -->
+            <main>
+                <div class="results-info">
+                    <span id="resultsCount">Mostrando productos disponibles</span>
+                </div>
+
+                <div class="products-grid" id="productGrid">
+                    <!-- Los productos se cargan dinámicamente aquí -->
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Panel del Carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Tu Carrito de Compras</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">$0.00 USD</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutOrder()">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <!-- Script de Búsqueda y Filtrado en Tiempo Real -->
+    <script>
+        // Base de datos de productos de la tienda
+        const allProducts = [
+            { name: "Paper Mate - Caja de Lápices Mongol 12und", price: 3.80, category: "Escolar", img: "https://lh3.googleusercontent.com/hE1rF9ZZEye5SiPWK8bzxvqZup86st5t8peTK0Aa-FEBUB1q8ArHLOsgmPaZxO1c_FJNCshd7xVmP9JFKtkDE9dBrvCNVlEkmXI9L3MZ4RlSRN4" },
+            { name: "Kores - Creyones de madera 12 und", price: 5.50, category: "Escolar", img: "https://cdn.prod.website-files.com/626078556037c589033cb5e9/6448718889df4ac08c827186_Colores%20Kores.png" },
+            { name: "Santillana - Libro A través de mi ventana", price: 15.00, category: "Libros", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC72uQWQlVRdbLdKb05VMMg-hveQVIWssCkaITaWHCobz9WXfqdRvFqP4&s=10" },
+            { name: "Pointer - Set Acuarela 12 colores", price: 4.00, category: "Escolar", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkJthTy8Z0jjYbVLbh2qw0Mcv240ieA0Xug_Pja2n0fw&s=10" },
+            { name: "Norma - Cuaderno Rayado 100 Hojas", price: 2.50, category: "Escolar", img: "https://laproveedora.com/images/portadas/CCCOLOR9077044.webp?1784106758" },
+            { name: "Planeta - Libro A dos metros de ti", price: 14.00, category: "Libros", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-5_03a6Rm_hMYRF-1unnl35RGCuGQThBaDTZ4w9AzZA&s=10" },
+            { name: "Ofimack - Resma de Papel Bond Tamaño Carta", price: 6.50, category: "Oficina", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEwEJ3WaqM8yKrrQuEXOFChShiwAcNV2oFu0wwzR1MCg&s" },
+            { name: "Sysabe - Archivador de Palanca Lomo Ancho", price: 3.50, category: "Oficina", img: "https://www.libreriaeuropa.com.ve/libreria_media/producto/725275/0000725275.jpg" },
+            { name: "Casio - Calculadora Científica FX-82MS", price: 14.00, category: "Oficina", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSObZs1l-qGkUg6Tta4Bt_EUErfvxFiGQiBH5hjas1yjA&s=10" }
+        ];
+
+        function renderProducts(products) {
+            const grid = document.getElementById('productGrid');
+            const countInfo = document.getElementById('resultsCount');
+            countInfo.innerText = `Mostrando ${products.length} resultados de ${allProducts.length} productos.`;
+
+            if (products.length === 0) {
+                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #a0aec0; padding: 3rem;">No se encontraron productos con esos filtros.</p>';
+                return;
+            }
+
+            let html = '';
+            products.forEach(p => {
+                html += `
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <span class="category-tag">${p.category}</span>
+                            <img src="${p.img}" alt="${p.name}">
+                        </div>
+                        <div class="product-info">
+                            <h3>${p.name}</h3>
+                            <div>
+                                <div class="product-price"><span class="current-price">$${p.price.toFixed(2)} USD</span></div>
+                                <button class="btn-buy" onclick="addToCart('${p.name}', ${p.price})">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            grid.innerHTML = html;
+        }
+
+        function filterProducts() {
+            const searchInput = document.getElementById('searchInputTop').value.toLowerCase();
+            const maxPrice = parseFloat(document.getElementById('priceRange').value);
+            document.getElementById('priceLimitText').innerText = `$${maxPrice.toFixed(2)} USD`;
+
+            const checkedCategories = Array.from(document.querySelectorAll('input[name="cat"]:checked')).map(cb => cb.value);
+
+            const filtered = allProducts.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(searchInput);
+                const matchesPrice = p.price <= maxPrice;
+                const matchesCategory = checkedCategories.length === 0 || checkedCategories.includes(p.category);
+                return matchesSearch && matchesPrice && matchesCategory;
+            });
+
+            renderProducts(filtered);
+        }
+
+        function resetCategory() {
+            document.querySelectorAll('input[name="cat"]').forEach(cb => cb.checked = false);
+            filterProducts();
+        }
+
+        function resetPrice() {
+            document.getElementById('priceRange').value = 25;
+            filterProducts();
+        }
+
+        function clearAllFilters() {
+            document.getElementById('searchInputTop').value = '';
+            resetCategory();
+            resetPrice();
+        }
+
+        // Inicializar vista completa
+        renderProducts(allProducts);
+
+        // Funciones del Carrito
+        let cart = JSON.parse(localStorage.getItem('cart_brisas')) || [];
+        updateCartUI();
+
+        function toggleCart() { document.getElementById('cartModal').classList.toggle('open'); }
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            localStorage.setItem('cart_brisas', JSON.stringify(cart));
+            updateCartUI();
+            toggleCart();
+        }
+        function updateCartUI() {
+            const counter = document.getElementById('cart-counter');
+            const container = document.getElementById('cartItemsContainer');
+            const totalElement = document.getElementById('cartTotalPrice');
+            if (counter) counter.innerText = cart.length;
+            if (!container) return;
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="color: #a0aec0; text-align: center; margin-top: 2rem;">Tu carrito está vacío.</p>';
+                if (totalElement) totalElement.innerText = '$0.00 USD';
+                return;
+            }
+            let html = '', total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `<div class="cart-item"><div><strong>${item.name}</strong><br><small>$${item.price.toFixed(2)} USD</small></div><button onclick="removeItem(${index})" style="background:#e53e3e; color:white; border:none; padding:0.2rem 0.5rem; border-radius:4px; cursor:pointer;">X</button></div>`;
+            });
+            container.innerHTML = html;
+            if (totalElement) totalElement.innerText = `$${total.toFixed(2)} USD`;
+        }
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart_brisas', JSON.stringify(cart));
+            updateCartUI();
+        }
+        function checkoutOrder() {
+            if (cart.length === 0) { alert('Tu carrito está vacío.'); return; }
+            alert('¡Gracias por tu compra en Brisas de Oriente! Tu pedido ha sido procesado con éxito.');
+            cart = [];
+            localStorage.removeItem('cart_brisas');
+            updateCartUI();
+            toggleCart();
+        }
+    </script>
+</body>
+</html>
