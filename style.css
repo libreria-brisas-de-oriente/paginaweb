@@ -1,6 +1,7 @@
 /* ==========================================
-   BRISAS DE ORIENTE - HOJA DE ESTILOS CSS
+   CONFIGURACIÓN DE TIPOGRAFÍA GARET LOCAL
    ========================================== */
+
 @font-face {
     font-family: 'Garet';
     src: url('fonts/Garet-Book.woff2') format('woff2');
@@ -34,23 +35,6 @@
     box-sizing: border-box;
     font-family: 'Garet', sans-serif !important;
 }
-:root {
-    --primary-blue: #0f4c81;
-    --dark-blue: #082946;
-    --accent-orange: #e27d60;
-    --accent-yellow: #f4d06f;
-    --bg-light: #f8fafc;
-    --text-dark: #2d3748;
-    --white: #ffffff;
-    --border-color: #cbd5e0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 body {
     background-color: var(--bg-light);
@@ -75,7 +59,7 @@ body {
     align-items: center;
 }
 
-/* Header Principal */
+/* Header Principal con Búsqueda Centrada y Ancha */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -97,6 +81,7 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex: 0 0 auto;
 }
 
 .logo-img {
@@ -116,37 +101,40 @@ header {
     color: #718096;
 }
 
-/* Barra de Búsqueda y Enlaces del Header */
-.header-right {
+.header-center {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 10px;
+    flex: 1;
+    max-width: 550px;
+    margin: 0 2rem;
 }
 
 .search-bar-container {
     display: flex;
     align-items: center;
     border: 2px solid var(--primary-blue);
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
     background: var(--white);
-    width: 350px;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
 .search-bar-container input {
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     outline: none;
     width: 100%;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .search-bar-container button {
     background-color: var(--primary-blue);
     color: var(--white);
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     cursor: pointer;
     font-weight: bold;
 }
@@ -154,7 +142,7 @@ header {
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.8rem;
 }
 
 .nav-menu a {
@@ -169,10 +157,16 @@ header {
     color: var(--primary-blue);
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
 .cart-btn {
     background-color: var(--primary-blue);
     color: var(--white);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -203,21 +197,18 @@ header {
 }
 
 /* ==========================================
-   SECCIÓN HERO / BANNER PRINCIPAL (SEGÚN ESQUEMA)
+   SECCIÓN HERO / BANNER PRINCIPAL (CORREGIDO)
    ========================================== */
 .hero-section {
-    background: linear-gradient(rgba(8, 41, 70, 0.82), rgba(15, 76, 129, 0.82)), 
+    background: linear-gradient(rgba(8, 41, 70, 0.85), rgba(15, 76, 129, 0.85)), 
                 url('https://www.revistaestilo.net/binrepository/1501x1000/0c0/0d0/none/179468266/UCMC/655cfdc3c498f145310377_9022394_20241111142522.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
     border-radius: 12px;
-    padding: 4rem 3rem 2.5rem 3rem;
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
     margin-bottom: 3rem;
     box-shadow: 0 10px 25px rgba(15,76,129,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .hero-top-layout {
@@ -225,76 +216,77 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .hero-content {
-    max-width: 600px;
+    flex: 1;
+    max-width: 650px;
 }
 
 .hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
     line-height: 1.2;
     font-weight: 800;
 }
 
 .hero-content p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     opacity: 0.95;
 }
 
-/* Imagen lateral en el Banner */
+/* Logo Grande, Transparente y a la Derecha */
 .hero-image-container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 280px;
-    height: 200px;
-    border: 3px solid var(--accent-orange);
+    width: 320px;
+    flex-shrink: 0;
 }
 
 .hero-image-container img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    max-height: 200px;
     object-fit: contain;
 }
 
-/* Los 3 bloques inferiores CENTRADOS (Tienda, Horarios, Delivery) */
+/* Los 3 Bloques Inferiores (Tienda, Horarios, Delivery) */
 .hero-boxes-centered {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    background: rgba(255, 255, 255, 0.12);
-    padding: 1.5rem;
+    gap: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.2rem;
     border-radius: 10px;
-    backdrop-filter: blur(8px);
-    border: 2px solid #3182ce;
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(49, 130, 206, 0.5);
+    width: 100%;
 }
 
 .hero-box-item {
-    background: rgba(26, 54, 93, 0.85);
-    padding: 1.2rem;
+    background: rgba(26, 54, 93, 0.9);
+    padding: 1rem;
     border-radius: 8px;
     text-align: center;
     border-top: 4px solid var(--accent-orange);
 }
 
 .hero-box-item h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--accent-yellow);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .hero-box-item p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.9;
     margin: 0;
 }
@@ -465,7 +457,7 @@ header {
     font-weight: 700;
 }
 
-/* Estilo de Marcas Aliadas */
+/* Marcas Aliadas */
 .brands-banner-wrapper {
     background-color: #00bcd4;
     border-radius: 16px;
@@ -513,28 +505,29 @@ header {
     background-color: #ffffff;
     color: var(--primary-blue);
     border-radius: 10px;
-    padding: 2rem 1rem;
+    padding: 1.2rem 1rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .brands-center-box img {
-    width: 140px;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1.2rem;
+    width: 100%;
+    max-height: 135px;
     object-fit: contain;
+    flex-grow: 1;
 }
 
 .brands-center-box h3 {
     color: var(--primary-blue);
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     white-space: nowrap;
     font-weight: 800;
+    margin-top: 0.8rem;
 }
 
 /* Modal / Panel del Carrito */
@@ -613,11 +606,73 @@ header {
     cursor: pointer;
 }
 
-/* Footer */
+/* Footer y Boletín */
+.newsletter-section {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(15, 76, 129, 0.6);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.newsletter-logo {
+    width: 220px;
+    height: auto;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.newsletter-section p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-input {
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.newsletter-btn {
+    background-color: var(--accent-yellow);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.newsletter-btn:hover {
+    background-color: #f6c443;
+}
+
 footer {
     background-color: var(--dark-blue);
     color: var(--white);
-    padding: 4rem 0 2rem 0;
     margin-top: 5rem;
 }
 
@@ -682,74 +737,8 @@ footer {
     width: 1160px;
     margin: 0 auto;
     border-top: 1px solid rgba(255,255,255,0.15);
-    padding-top: 1.5rem;
+    padding: 1.5rem 0;
     text-align: center;
     font-size: 0.85rem;
     opacity: 0.7;
-}
-/* ==========================================
-   SECCIÓN BOLETIN / SUSCRIPCIÓN (FOOTER)
-   ========================================== */
-
-.newsletter-section {
-    background-color: var(--dark-blue);
-    color: var(--white);
-    padding: 4rem 2rem;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.newsletter-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(15, 76, 129, 0.6);
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.15);
-}
-
-.newsletter-logo {
-    width: 220px; /* Logo más grande y vistoso */
-    height: auto;
-    margin-bottom: 1rem;
-    object-fit: contain;
-}
-
-.newsletter-section p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    line-height: 1.5;
-}
-
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.newsletter-input {
-    padding: 0.9rem 1.2rem;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
-    outline: none;
-    width: 100%;
-}
-
-.newsletter-btn {
-    background-color: var(--accent-yellow);
-    color: var(--text-dark);
-    border: none;
-    padding: 0.9rem;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.newsletter-btn:hover {
-    background-color: #f6c443;
 }
