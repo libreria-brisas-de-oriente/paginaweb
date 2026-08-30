@@ -237,19 +237,6 @@ header {
 }
 
 /* Logo Grande, Transparente y a la Derecha */
-.hero-image-container {
-    background: transparent !important;
-    background-color: transparent !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 380px;
-    flex-shrink: 0;
-}
-
 .hero-image-container img {
     width: 100%;
     max-height: 220px;
