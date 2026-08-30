@@ -204,15 +204,18 @@ header {
 
 /* Estructura del banner principal con texto izquierda y logo derecha */
 .hero-section {
-    background: linear-gradient(rgba(8, 41, 70, 0.85), rgba(15, 76, 129, 0.85)), 
+    background: linear-gradient(rgba(8, 41, 70, 0.82), rgba(15, 76, 129, 0.82)), 
                 url('https://www.revistaestilo.net/binrepository/1501x1000/0c0/0d0/none/179468266/UCMC/655cfdc3c498f145310377_9022394_20241111142522.jpg');
     background-size: cover;
     background-position: center;
     color: var(--white);
     border-radius: 12px;
-    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    padding: 4rem 3rem 2.5rem 3rem;
     margin-bottom: 3rem;
     box-shadow: 0 10px 25px rgba(15,76,129,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .hero-top-layout {
@@ -220,77 +223,75 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 650px;
+    max-width: 600px;
 }
 
 .hero-content h2 {
-    font-size: 2.3rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     line-height: 1.2;
     font-weight: 800;
 }
 
 .hero-content p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     opacity: 0.95;
 }
 
-/* Logo grande y transparente a la derecha */
+/* Imagen lateral en el Banner */
 .hero-image-container {
-    background: transparent !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
+   
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 320px;
-    flex-shrink: 0;
+    width: 350px;
+    height: 350px;
+    border: 3px solid var(--accent-orange);
 }
 
 .hero-image-container img {
-    width: 100%;
-    max-height: 200px;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
 }
 
-/* Los 3 cuadros organizados abajo a todo lo ancho */
+/* Los 3 bloques inferiores CENTRADOS (Tienda, Horarios, Delivery) */
 .hero-boxes-centered {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.2rem;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 1.5rem;
     border-radius: 10px;
-    backdrop-filter: blur(6px);
-    border: 2px solid rgba(49, 130, 206, 0.5);
-    width: 100%;
+    backdrop-filter: blur(8px);
+    border: 2px solid #3182ce;
 }
 
 .hero-box-item {
-    background: rgba(26, 54, 93, 0.9);
-    padding: 1rem;
+    background: rgba(26, 54, 93, 0.85);
+    padding: 1.2rem;
     border-radius: 8px;
     text-align: center;
     border-top: 4px solid var(--accent-orange);
 }
 
 .hero-box-item h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--accent-yellow);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .hero-box-item p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     opacity: 0.9;
     margin: 0;
 }
