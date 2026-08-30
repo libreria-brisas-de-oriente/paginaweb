@@ -1,7 +1,6 @@
 /* ==========================================
-   CONFIGURACIÓN DE TIPOGRAFÍA GARET LOCAL
+   BRISAS DE ORIENTE - HOJA DE ESTILOS CSS
    ========================================== */
-
 @font-face {
     font-family: 'Garet';
     src: url('fonts/Garet-Book.woff2') format('woff2');
@@ -35,6 +34,23 @@
     box-sizing: border-box;
     font-family: 'Garet', sans-serif !important;
 }
+:root {
+    --primary-blue: #0f4c81;
+    --dark-blue: #082946;
+    --accent-orange: #e27d60;
+    --accent-yellow: #f4d06f;
+    --bg-light: #f8fafc;
+    --text-dark: #2d3748;
+    --white: #ffffff;
+    --border-color: #cbd5e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body {
     background-color: var(--bg-light);
@@ -59,7 +75,7 @@ body {
     align-items: center;
 }
 
-/* Header Principal con Búsqueda Centrada y Ancha */
+/* Header Principal */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -81,7 +97,6 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
-    flex: 0 0 auto;
 }
 
 .logo-img {
@@ -101,40 +116,37 @@ header {
     color: #718096;
 }
 
-.header-center {
+/* Barra de Búsqueda y Enlaces del Header */
+.header-right {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     gap: 10px;
-    flex: 1;
-    max-width: 550px;
-    margin: 0 2rem;
 }
 
 .search-bar-container {
     display: flex;
     align-items: center;
     border: 2px solid var(--primary-blue);
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     background: var(--white);
-    width: 100%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    width: 350px;
 }
 
 .search-bar-container input {
     border: none;
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1rem;
     outline: none;
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .search-bar-container button {
     background-color: var(--primary-blue);
     color: var(--white);
     border: none;
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
     font-weight: bold;
 }
@@ -142,7 +154,7 @@ header {
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 1.8rem;
+    gap: 2rem;
 }
 
 .nav-menu a {
@@ -157,16 +169,10 @@ header {
     color: var(--primary-blue);
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    flex: 0 0 auto;
-}
-
 .cart-btn {
     background-color: var(--primary-blue);
     color: var(--white);
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1rem;
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -195,7 +201,6 @@ header {
     width: 1160px;
     margin: 2rem auto;
 }
-
 /* ==========================================
    SECCIÓN HERO / BANNER PRINCIPAL (CORREGIDO)
    ========================================== */
