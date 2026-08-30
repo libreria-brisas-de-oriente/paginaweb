@@ -244,17 +244,16 @@ header {
     box-shadow: none !important;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 320px;
+    justify-content: flex-end;
+    width: 380px;
     flex-shrink: 0;
 }
 
 .hero-image-container img {
     width: 100%;
-    max-height: 200px;
+    max-height: 220px; /* Tamaño grande ocupando el espacio del antiguo cuadro */
     object-fit: contain;
 }
-
 /* Los 3 Bloques Inferiores (Tienda, Horarios, Delivery) */
 .hero-boxes-centered {
     display: grid;
